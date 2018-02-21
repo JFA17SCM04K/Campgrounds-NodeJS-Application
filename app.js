@@ -19,7 +19,8 @@ var campgroundRoutes    = require("./routes/campgrounds"),
 app.use(express.static(__dirname+"/public"))
 var Campground=require("./models/campgrounds")
 
-mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://Joeldeep:password@ds241737.mlab.com:41737/yelpcampcampgrounds");
+
 
 app.locals.moment = require('moment');
 app.use(bodyParser.urlencoded({extended: true}));
