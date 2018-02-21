@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>YelpCamp</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="../../public/main.css">
+      <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
+
+
+
+      <style>
+          #map {
+                height: 400px;
+                width: 100%;
+                padding: 5px;
+                border: 0.05px solid #999;
+                }
+           #floating-panel {
+                z-index: 5;
+                background-color: #fff;
+                padding: 5px;
+                border: 0.05px solid #999;
+                text-align: center;
+                font-family: 'Roboto','sans-serif';
+                line-height: 30px;
+                padding-left: 10px;
+                }
+           .display-3{
+                    font-family: 'Metal Mania';
+                }
+            .container.rowForm{
+              align: center;
+            }
+
+          /* .zoom {
+                  padding: 50px;
+                  transition: transform .2s;
+                  width: 400px;
+                  height: 200px;
+                  margin: 0 auto;
+                }
+
+          .zoom:hover {
+                  -ms-transform: scale(1.5); /* IE 9 */
+                  /* -webkit-transform: scale(1.5); /* Safari 3-8 */
+                  /* transform: scale(1.5);
+                }  */
+      </style>
+  </head>
+  <body>
+
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="/">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/campgrounds">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <% if(!currentUser){ %>
+            <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">
+              <a class="nav-link" href="/register">Sign Up</a>
+            </li>
+          <% } else { %>
+              <li class="nav-item active"><a class="nav-link" href="#">Signed In As <%= currentUser.username %></a></li>
+              <li class="nav-item active"><a class="nav-link" href="/logout">Logout</a></li>
+            <% } %>
+        </ul>
+
+      </div>
+  </nav>
+
+  <div class="container">
+     <% if(error && error.length > 0) { %>
+       <div class="alert alert-danger"><p><%=error %></p></div>
+     <% } %>
+
+     <% if(success && success.length > 0) { %>
+       <div class="alert alert-success"><p><%= success %></p></div>
+     <% } %>
+  </div>
+  <div class="container">
