@@ -1,13 +1,13 @@
 # Campgrounds-NodeJS-Application
 YelpCamp is an online social media aimed at sharing different campgrounds across the world. It is implemented using RESTful routing following an MVC architecture. It has three modules namely – User, Campgrounds and Comments. MongoDB is used for storing the schemas of all the three modules. YelpCamp involves implementing the CRUD operations on all its modules. 
 
-# FUNCTIONALITY:
+# Functionality:
 
 •	User can sign-up and create an account on YelpCamp. The user can be the admin of YelpCamp if and only if he/she knows the secret code (that is predefined in the code) for being an admin. 
 •	As a user he/she can perform CRUD operations on the campgrounds and comments added by him/her only. While an admin has the authority to perform CRUD operations on all the campgrounds and comments, whether or not the admin is the author of that campground or comment.
 
 Additionally, this app is equipped with features like –
-# Authentication:
+Authentication:
 Authentication confirms that a user is who they claim to be. For example, when a user logs into his account on YelpCamp, then YelpCamp can verify that it is you and not an attacker trying to trick.
 
 Authorization:
